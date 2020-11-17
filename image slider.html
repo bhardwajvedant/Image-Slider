@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image slider</title>
+        
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+       
+        <link rel="stylesheet" href="image slider.css">
+
+    </head>
+
+    <body>
+
+        <div id="next">
+            <button id="nxtbtn" class="btn btn-primary" onclick="b()">Previous</button>
+        </div>
+        <div id="container">
+
+
+        </div>
+
+        <div id="previous">
+            <button id="prebtn" class="btn btn-success" onclick="a()">Next</button>
+        </div>
+
+
+
+
+        <script type="text/javascript">
+// background-image: url("images/imagede.jpg");
+var arr=["images/image0.jpg","images/image1.jpg","images/image2.jpg","images/image3.jpg","images/image4.jpg"];
+var counter=-1;
+
+function a()
+{
+    if(counter<arr.length-1)
+    {
+        counter++;
+    var div=document.getElementById("container");
+    div.setAttribute("style","background-image: url("+arr[counter]+")");
+   
+  
+    }
+    else{
+        alert("Photos are finished..!!!");
+    }
+}
+
+
+function b()
+{
+    
+    if(counter>0)
+    {
+        --counter;
+       
+    var div=document.getElementById("container");
+    div.setAttribute("style","background-image: url("+arr[counter]+")");
+    
+    }
+    else{
+        alert("Photos are finished..!!!");
+    }
+}
+
+
+      
+    
+        </script>
+    </body>
+</html>
